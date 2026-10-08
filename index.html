@@ -372,26 +372,20 @@
           <p class="text-sm text-slate-600">Cherished moments, silly laughs, and memories that last forever.</p>
         </div>
         
-        <!-- Photo Upload Trigger -->
-        <label for="photoUploadInput" class="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-rose-200 rounded-2xl shadow-sm text-rose-600 font-semibold text-sm hover:bg-rose-50 hover:scale-105 active:scale-95 transition-all cursor-pointer">
-          <i class="fa-solid fa-cloud-arrow-up text-rose-500"></i>
-          <span>Upload Custom Photos</span>
-          <input type="file" id="photoUploadInput" accept="image/*" multiple class="hidden">
-        </label>
       </div>
 
       <!-- Polaroid Grid -->
       <div id="polaroidContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
         
-        <!-- Polaroid Card 1 -->
+        <!-- Sister's Main Photo — IMAGE LINK IS SET IN SISTER_PHOTO ABOVE -->
         <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[-2deg]">
           <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[-1deg]"></div>
           <div class="w-full h-56 bg-rose-100 rounded-sm overflow-hidden mb-3 relative group">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Sisters Laughing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/fad2d9/d95374?text=Sister+Smiles'">
+            <img id="sisterMainPhoto" src="https://placehold.co/600x400/fad2d9/d95374?text=Add+Sister+Photo" alt="Sister's Photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           </div>
           <div class="text-center">
-            <p class="font-handwriting text-2xl text-slate-800 font-bold">Partner in Crime</p>
-            <p class="text-xs text-slate-500 mt-0.5">Always plotting our next sweet adventure</p>
+            <p class="font-handwriting text-2xl text-slate-800 font-bold">My Crazy Sister ❤️</p>
+            <p class="text-xs text-slate-500 mt-0.5">The one who makes every moment unforgettable!</p>
           </div>
         </div>
 
@@ -790,6 +784,12 @@
 
   <script>
     /* ==========================================================
+       SISTER PHOTO & NAME — EDIT THESE TWO LINES
+       ========================================================== */
+    const SISTER_NAME = "Your Sister's Name";
+    const SISTER_PHOTO = "PASTE_YOUR_IMAGE_LINK_HERE";
+
+    /* ==========================================================
        1. WEB AUDIO API SYNTHESIZER (NO EXTERNAL AUDIO ASSET LAG)
        ========================================================== */
     let audioCtx = null;
@@ -1165,23 +1165,22 @@
     }
 
     /* ==========================================================
-       6. DYNAMIC POLAROID PHOTO UPLOAD PREVIEW
+       6. FIXED SISTER PHOTO
        ========================================================== */
-    document.getElementById('photoUploadInput').addEventListener('change', function(e) {
-      const files = e.target.files;
-      if (!files || files.length === 0) return;
+    document.addEventListener('DOMContentLoaded', () => {
+      const photo = document.getElementById('sisterMainPhoto');
+      if (photo && SISTER_PHOTO !== "PASTE_YOUR_IMAGE_LINK_HERE") {
+        photo.src = SISTER_PHOTO;
+      }
 
-      const polaroids = document.querySelectorAll('#polaroidContainer .polaroid img');
-      Array.from(files).slice(0, polaroids.length).forEach((file, index) => {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          polaroids[index].src = event.target.result;
-        };
-        reader.readAsDataURL(file);
-      });
+      const nameInput = document.getElementById('sisterNameInput');
+      if (nameInput) nameInput.value = SISTER_NAME;
 
-      showToast("Uploaded custom sister photos successfully! 📸");
-      fireHeartConfetti();
+      const displayName = document.getElementById('displaySisterName');
+      if (displayName) displayName.textContent = SISTER_NAME;
+
+      const cardRecipient = document.getElementById('cardRecipient');
+      if (cardRecipient) cardRecipient.textContent = `Dear ${SISTER_NAME},`;
     });
 
     /* ==========================================================
