@@ -363,68 +363,101 @@
       </div>
     </section>
 
-    <!-- Memory Lane: Polaroid Wall with Custom Photo Uploads -->
-    <section>
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-rose-500 font-bold">Everlasting Memories</span>
-          <h2 class="text-3xl font-serif font-bold text-slate-800">Our Sisterhood Gallery 📸</h2>
-          <p class="text-sm text-slate-600">Cherished moments, silly laughs, and memories that last forever.</p>
+    <!-- PHOTO GALLERY: TWO ROWS, FOUR PHOTOS IN EACH ROW -->
+    <section id="photoGallery" class="space-y-12">
+
+      <!-- ROW 1: OUR MEMORIES -->
+      <div>
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs uppercase tracking-widest text-rose-500 font-bold">Moments to Remember</span>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800">Our Memories 📸</h2>
+          <p class="text-sm text-slate-600 mt-2">All the little moments that turned into our favourite memories.</p>
         </div>
-        
+
+        <div id="memoriesPhotoGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-3">
+          <!-- OUR MEMORIES PHOTO 1: change MEMORY_PHOTO_1 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[-1deg]"></div>
+            <div class="w-full h-56 bg-rose-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="memoryPhoto1" src="https://placehold.co/600x400/fad2d9/d95374?text=Our+Memory+1" alt="Our memory photo 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">The Good Times</p><p class="text-xs text-slate-500 mt-1">A little moment worth keeping forever.</p></div>
+          </div>
+
+          <!-- OUR MEMORIES PHOTO 2: change MEMORY_PHOTO_2 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[2deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[2deg]"></div>
+            <div class="w-full h-56 bg-amber-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="memoryPhoto2" src="https://placehold.co/600x400/faf0d7/d4aa50?text=Our+Memory+2" alt="Our memory photo 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">Silly Adventures</p><p class="text-xs text-slate-500 mt-1">The laughs that never get old.</p></div>
+          </div>
+
+          <!-- OUR MEMORIES PHOTO 3: change MEMORY_PHOTO_3 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[-2deg]"></div>
+            <div class="w-full h-56 bg-purple-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="memoryPhoto3" src="https://placehold.co/600x400/f3e8ff/9333ea?text=Our+Memory+3" alt="Our memory photo 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">Little Traditions</p><p class="text-xs text-slate-500 mt-1">Our kind of happy place.</p></div>
+          </div>
+
+          <!-- OUR MEMORIES PHOTO 4: change MEMORY_PHOTO_4 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[1.5deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[1deg]"></div>
+            <div class="w-full h-56 bg-pink-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="memoryPhoto4" src="https://placehold.co/600x400/fce7f3/db2777?text=Our+Memory+4" alt="Our memory photo 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">Forever Moments</p><p class="text-xs text-slate-500 mt-1">Memories we will always treasure.</p></div>
+          </div>
+        </div>
       </div>
 
-      <!-- Polaroid Grid -->
-      <div id="polaroidContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
-        
-        <!-- Sister's Main Photo — IMAGE LINK IS SET IN SISTER_PHOTO ABOVE -->
-        <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[-2deg]">
-          <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[-1deg]"></div>
-          <div class="w-full h-56 bg-rose-100 rounded-sm overflow-hidden mb-3 relative group">
-            <img id="sisterMainPhoto" src="https://placehold.co/600x400/fad2d9/d95374?text=Add+Sister+Photo" alt="Sister's Photo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          </div>
-          <div class="text-center">
-            <p class="font-handwriting text-2xl text-slate-800 font-bold">My Crazy Sister ❤️</p>
-            <p class="text-xs text-slate-500 mt-0.5">The one who makes every moment unforgettable!</p>
-          </div>
+      <!-- ROW 2: MY BEAUTIFUL SIS -->
+      <div>
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <span class="text-xs uppercase tracking-widest text-rose-500 font-bold">A Little Appreciation</span>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-800">My Beautiful Sis ❤️</h2>
+          <p class="text-sm text-slate-600 mt-2">Four snapshots of the most unforgettable girl in my life.</p>
         </div>
 
-        <!-- Polaroid Card 2 -->
-        <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[2.5deg]">
-          <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[2deg]"></div>
-          <div class="w-full h-56 bg-amber-100 rounded-sm overflow-hidden mb-3 relative group">
-            <img src="https://images.unsplash.com/photo-1543807535-eceef0bc6599?auto=format&fit=crop&w=600&q=80" alt="Fun Times" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/faf0d7/d4aa50?text=Secret+Keeper'">
+        <div id="beautifulSisPhotoGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-3">
+          <!-- BEAUTIFUL SIS PHOTO 1: change BEAUTIFUL_SIS_PHOTO_1 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[1.5deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[1deg]"></div>
+            <div class="w-full h-56 bg-rose-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="beautifulSisPhoto1" src="https://placehold.co/600x400/fad2d9/d95374?text=Beautiful+Sis+1" alt="My beautiful sister photo 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">My Beautiful Sis</p><p class="text-xs text-slate-500 mt-1">Pretty inside and out.</p></div>
           </div>
-          <div class="text-center">
-            <p class="font-handwriting text-2xl text-slate-800 font-bold">The Secret Keeper</p>
-            <p class="text-xs text-slate-500 mt-0.5">My safe place for late-night tea & talks</p>
+
+          <!-- BEAUTIFUL SIS PHOTO 2: change BEAUTIFUL_SIS_PHOTO_2 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[-1deg]"></div>
+            <div class="w-full h-56 bg-amber-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="beautifulSisPhoto2" src="https://placehold.co/600x400/faf0d7/d4aa50?text=Beautiful+Sis+2" alt="My beautiful sister photo 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">Always Iconic</p><p class="text-xs text-slate-500 mt-1">That one-of-a-kind smile.</p></div>
+          </div>
+
+          <!-- BEAUTIFUL SIS PHOTO 3: change BEAUTIFUL_SIS_PHOTO_3 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[2deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[2deg]"></div>
+            <div class="w-full h-56 bg-purple-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="beautifulSisPhoto3" src="https://placehold.co/600x400/f3e8ff/9333ea?text=Beautiful+Sis+3" alt="My beautiful sister photo 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">Certified Star</p><p class="text-xs text-slate-500 mt-1">Always shining in her own way.</p></div>
+          </div>
+
+          <!-- BEAUTIFUL SIS PHOTO 4: change BEAUTIFUL_SIS_PHOTO_4 in the script at the bottom -->
+          <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+            <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[-2deg]"></div>
+            <div class="w-full h-56 bg-pink-100 rounded-sm overflow-hidden mb-3 relative group">
+              <img id="beautifulSisPhoto4" src="https://placehold.co/600x400/fce7f3/db2777?text=Beautiful+Sis+4" alt="My beautiful sister photo 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="text-center"><p class="font-handwriting text-2xl text-slate-800 font-bold">My Forever Favourite</p><p class="text-xs text-slate-500 mt-1">One photo, a million memories.</p></div>
           </div>
         </div>
-
-        <!-- Polaroid Card 3 -->
-        <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[-3deg]">
-          <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[-2deg]"></div>
-          <div class="w-full h-56 bg-purple-100 rounded-sm overflow-hidden mb-3 relative group">
-            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80" alt="Sunset and Hugs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/f3e8ff/9333ea?text=Wardrobe+Thief'">
-          </div>
-          <div class="text-center">
-            <p class="font-handwriting text-2xl text-slate-800 font-bold">"Borrowed" Clothes</p>
-            <p class="text-xs text-slate-500 mt-0.5">Where 80% of my favorite hoodies went!</p>
-          </div>
-        </div>
-
-        <!-- Polaroid Card 4 -->
-        <div class="polaroid rounded-sm p-3 pb-6 relative transform rotate-[1.5deg]">
-          <div class="tape absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-6 rotate-[1deg]"></div>
-          <div class="w-full h-56 bg-pink-100 rounded-sm overflow-hidden mb-3 relative group">
-            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80" alt="Celebration" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/fce7f3/db2777?text=Best+Friend'">
-          </div>
-          <div class="text-center">
-            <p class="font-handwriting text-2xl text-slate-800 font-bold">Lifetime Best Friend</p>
-            <p class="text-xs text-slate-500 mt-0.5">Blessed to have you by my side always</p>
-          </div>
-        </div>
-
       </div>
     </section>
 
@@ -784,10 +817,23 @@
 
   <script>
     /* ==========================================================
-       SISTER PHOTO & NAME — EDIT THESE TWO LINES
+       PERSONAL DETAILS AND PHOTO URLS — EDIT THESE LINES
+       Paste a direct image URL inside each pair of quotation marks.
+       The website uses these links for the eight gallery photos.
        ========================================================== */
     const SISTER_NAME = "Your Sister's Name";
-    const SISTER_PHOTO = "PASTE_YOUR_IMAGE_LINK_HERE";
+
+    // ROW 1: OUR MEMORIES — paste your four photo URLs below.
+    const MEMORY_PHOTO_1 = "https://placehold.co/600x400/fad2d9/d95374?text=Our+Memory+1";
+    const MEMORY_PHOTO_2 = "https://placehold.co/600x400/faf0d7/d4aa50?text=Our+Memory+2";
+    const MEMORY_PHOTO_3 = "https://placehold.co/600x400/f3e8ff/9333ea?text=Our+Memory+3";
+    const MEMORY_PHOTO_4 = "https://placehold.co/600x400/fce7f3/db2777?text=Our+Memory+4";
+
+    // ROW 2: MY BEAUTIFUL SIS — paste your four photo URLs below.
+    const BEAUTIFUL_SIS_PHOTO_1 = "https://placehold.co/600x400/fad2d9/d95374?text=Beautiful+Sis+1";
+    const BEAUTIFUL_SIS_PHOTO_2 = "https://placehold.co/600x400/faf0d7/d4aa50?text=Beautiful+Sis+2";
+    const BEAUTIFUL_SIS_PHOTO_3 = "https://placehold.co/600x400/f3e8ff/9333ea?text=Beautiful+Sis+3";
+    const BEAUTIFUL_SIS_PHOTO_4 = "https://placehold.co/600x400/fce7f3/db2777?text=Beautiful+Sis+4";
 
     /* ==========================================================
        1. WEB AUDIO API SYNTHESIZER (NO EXTERNAL AUDIO ASSET LAG)
@@ -1165,13 +1211,26 @@
     }
 
     /* ==========================================================
-       6. FIXED SISTER PHOTO
+       6. SET THE EIGHT HARD-CODED GALLERY PHOTOS
        ========================================================== */
     document.addEventListener('DOMContentLoaded', () => {
-      const photo = document.getElementById('sisterMainPhoto');
-      if (photo && SISTER_PHOTO !== "PASTE_YOUR_IMAGE_LINK_HERE") {
-        photo.src = SISTER_PHOTO;
-      }
+      const galleryPhotos = [
+        ['memoryPhoto1', MEMORY_PHOTO_1],
+        ['memoryPhoto2', MEMORY_PHOTO_2],
+        ['memoryPhoto3', MEMORY_PHOTO_3],
+        ['memoryPhoto4', MEMORY_PHOTO_4],
+        ['beautifulSisPhoto1', BEAUTIFUL_SIS_PHOTO_1],
+        ['beautifulSisPhoto2', BEAUTIFUL_SIS_PHOTO_2],
+        ['beautifulSisPhoto3', BEAUTIFUL_SIS_PHOTO_3],
+        ['beautifulSisPhoto4', BEAUTIFUL_SIS_PHOTO_4]
+      ];
+
+      galleryPhotos.forEach(([photoId, photoUrl]) => {
+        const photoElement = document.getElementById(photoId);
+        if (photoElement && photoUrl) {
+          photoElement.src = photoUrl;
+        }
+      });
 
       const nameInput = document.getElementById('sisterNameInput');
       if (nameInput) nameInput.value = SISTER_NAME;
